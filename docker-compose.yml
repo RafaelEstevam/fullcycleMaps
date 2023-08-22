@@ -9,6 +9,19 @@ services:
     volumes:
       - ./nestjs:/home/node/app
 
+  next:
+    build: ./next
+    ports:
+      - 3000:3000
+    container_name: next
+    volumes:
+      - ./next:/app
+    environment:
+      - WDS_SOCKET_HOST=127.0.0.1 
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+    
+
   mongo:
     # image: bitnami/mongodb:5.0.17
     image: bitnami/mongodb:4.4.15-debian-10-r8
