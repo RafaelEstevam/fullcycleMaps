@@ -14,6 +14,16 @@ Content-Type: application/json
 GET http://localhost:4000/routes/route/64e4ea50acb77947e5c93384
 
 ###
+POST http://localhost:4000/routes/driver
+Content-Type: application/json
+
+{
+    "route_id":"64e4eecb91f0e28d7396d9a8",
+    "lat":1,
+    "lng":1
+}
+
+###
 GET  http://localhost:4000/places?text=av tancredo neves, sao jose dos campos, sp
 #ChIJfXd1JfpMzJQRSsUvU9LXWRU
 ###
