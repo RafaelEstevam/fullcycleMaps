@@ -4,10 +4,11 @@ import { API } from "@/settings/api";
 
 export interface ResultProps{
     id?: string,
-    data?: any
+    data?: any,
+    showFunctions?: boolean, 
 }
 
-const Result = ({id, data}: ResultProps) => {
+const Result = ({id, data, showFunctions}: ResultProps) => {
 
     const {directions} = data;
     const [name, setName] = useState<string>('')
@@ -57,13 +58,20 @@ const Result = ({id, data}: ResultProps) => {
                     <Maps {...{directions}} />
                 )}
             </div>
-
-            <div className="w-4/6 py-4 flex justify-center">
-                <button className="p-4 bg-cyan-500" onClick={handleSaveRoute}>{id? 'Edit': 'Save'}</button>
-                <button className="p-4 bg-rose-500">Cancel</button>
-            </div>
+            
+            {showFunctions && (
+                <div className="w-4/6 py-4 flex justify-center">
+                    <button className="p-4 bg-cyan-500" onClick={handleSaveRoute}>{id? 'Edit': 'Save'}</button>
+                    <button className="p-4 bg-rose-500">Cancel</button>
+                </div>
+            )}
+            
         </div>
     )
+}
+
+Result.defaultProps = {
+    showFunctions: true
 }
 
 export default Result;

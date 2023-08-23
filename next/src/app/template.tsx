@@ -8,7 +8,7 @@ const Template = ({children}:TemplateProps) => {
     return (
         <div>
             <header className="p-4 bg-slate-100">
-                <p className="text-slate-500">Header</p>
+                <p className="text-slate-500">React Maps</p>
             </header>
             <div>
                 {children}
