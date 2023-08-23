@@ -1,12 +1,20 @@
 'use client'
-import { FormEvent, useState } from "react"
+import { RouteContext } from "@/app/routes/context"
+import { FormEvent, useContext, useState } from "react"
 
 interface SearchDestination {
     origin_id: string,
     destination_id: string
 }
 
+interface FormProps {
+    id?:string,
+    data?:any
+}
+
 const Form = () => {
+
+    const {setData} = useContext(RouteContext);
 
     const [formdata, setFormdata] = useState({
         source: '',
@@ -16,7 +24,7 @@ const Form = () => {
     const handleSearchDirections = async ({origin_id, destination_id}: SearchDestination) => {
         const response = await fetch(`http://localhost:4000/directions?originId=${origin_id}&destinationId=${destination_id}`)
         const directions = await response.json()
-        console.log(directions)
+        setData({directions})
     }
 
     const handleSubmit = async (e: FormEvent) => {

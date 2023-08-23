@@ -7,7 +7,7 @@ Content-Type: application/json
 {
     "name":"Rota 2",
     "source_id":"ChIJfXd1JfpMzJQRSsUvU9LXWRU",
-    "destination_id":"EmdSLiBQcm9mYS4gTWFyaWEgSm9zw6kgZGUgT2xpdmVpcmEgLSBKYXJkaW0gTm92YSBNaWNoaWdhbiwgU8OjbyBKb3PDqSBkb3MgQ2FtcG9zIC0gU1AsIDEyMjI1LTQzMCwgQnJhc2lsIi4qLAoUChIJcX5ycPtMzJQROwU030yjWrgSFAoSCSH5JJ78TMyUEWJ7zNdYGVv0"
+    "destination_id":"ChIJOXCZOYZLzJQR8JN6qytwKZo"
 }
 
 ###
@@ -27,8 +27,8 @@ Content-Type: application/json
 GET  http://localhost:4000/places?text=av tancredo neves, sao jose dos campos, sp
 #ChIJfXd1JfpMzJQRSsUvU9LXWRU
 ###
-GET  http://localhost:4000/places?text=rua professora maria jose de oliveira, nova michigan, sao jose dos campos, sp
-#EmdSLiBQcm9mYS4gTWFyaWEgSm9zw6kgZGUgT2xpdmVpcmEgLSBKYXJkaW0gTm92YSBNaWNoaWdhbiwgU8OjbyBKb3PDqSBkb3MgQ2FtcG9zIC0gU1AsIDEyMjI1LTQzMCwgQnJhc2lsIi4qLAoUChIJcX5ycPtMzJQROwU030yjWrgSFAoSCSH5JJ78TMyUEWJ7zNdYGVv0
+GET  http://localhost:4000/places?text=rua uberlandia, jardin Ismenia, sao jose dos campos, sp
+#ChIJOXCZOYZLzJQR8JN6qytwKZo
 
 ### Get directions
-GET http://localhost:4000/directions?originId=ChIJfXd1JfpMzJQRSsUvU9LXWRU&destinationId=EmdSLiBQcm9mYS4gTWFyaWEgSm9zw6kgZGUgT2xpdmVpcmEgLSBKYXJkaW0gTm92YSBNaWNoaWdhbiwgU8OjbyBKb3PDqSBkb3MgQ2FtcG9zIC0gU1AsIDEyMjI1LTQzMCwgQnJhc2lsIi4qLAoUChIJcX5ycPtMzJQROwU030yjWrgSFAoSCSH5JJ78TMyUEWJ7zNdYGVv0
+GET http://localhost:4000/directions?originId=ChIJfXd1JfpMzJQRSsUvU9LXWRU&destinationId=ChIJOXCZOYZLzJQR8JN6qytwKZo
