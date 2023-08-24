@@ -98,7 +98,6 @@ export class Maps {
     carMarkerOptions: google.maps.MarkerOptions;
     directionsResponseData?: DirectionsResponseData & { request: any };
   }) {
-
     if (routeOptions.routeId in this.routes) {
       throw new RouteExistsError();
     }
