@@ -38,7 +38,7 @@ const Route = () => {
                         name={'route'}
                         id={'route'}
                         value={selectRoute}
-                        onChange={(e) => setSelectRoute(e.target.value)}
+                        onChange={(e:any) => setSelectRoute(e.target.value)}
                         className="w-full text-slate-700 p-4 border-r-2 border-solid border-slate-200"
                     >
                         <option>Select a route</option>
