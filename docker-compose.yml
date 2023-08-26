@@ -20,7 +20,6 @@ services:
       - WDS_SOCKET_HOST=127.0.0.1 
       - CHOKIDAR_USEPOLLING=true
       - WATCHPACK_POLLING=true
-    
 
   mongo:
     # image: bitnami/mongodb:5.0.17
@@ -35,6 +34,9 @@ services:
       - MONGODB_REPLICA_SET_MODE=primary
       - MONGODB_REPLICA_SET_KEY=123456
       - MONGODB_DATABASE=nest
+
+  redis:
+    image: redis:7.0.8-alpine
 
 volumes:
   mongodb_data:
