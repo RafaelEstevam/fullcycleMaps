@@ -20,6 +20,9 @@ services:
       - WDS_SOCKET_HOST=127.0.0.1 
       - CHOKIDAR_USEPOLLING=true
       - WATCHPACK_POLLING=true
+    links:
+      - nestjs
+    
 
   mongo:
     # image: bitnami/mongodb:5.0.17
@@ -36,7 +39,8 @@ services:
       - MONGODB_DATABASE=nest
 
   redis:
-    image: redis:7.0.8-alpine
+    image: redis:6.2.13-alpine
+    # image: redis:7.0.8-alpine
 
 volumes:
   mongodb_data:

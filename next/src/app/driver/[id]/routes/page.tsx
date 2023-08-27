@@ -15,7 +15,7 @@ const Route = () => {
   const { data, handleGetRoute } = useRoute({ id: selectRoute });
 
   const handleGetRoutesList = async () => {
-    const routes = await fetch("http://localhost:4000/routes");
+    const routes = await fetch("http://localhost:3000/api/routes");
     const routesList = await routes.json();
     setRoutes(routesList);
   };

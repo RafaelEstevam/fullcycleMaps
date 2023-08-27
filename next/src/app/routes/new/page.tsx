@@ -5,7 +5,7 @@ import Result from "@/components/results.component";
 import { useState } from "react";
 import { RouteContext } from "../context";
 
-const newRoute = () => {
+const NewRoute = () => {
   const [data, setData] = useState<any>({});
 
   const context = {
@@ -21,4 +21,4 @@ const newRoute = () => {
   );
 };
 
-export default newRoute;
+export default NewRoute;

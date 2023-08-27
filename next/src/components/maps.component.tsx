@@ -36,9 +36,7 @@ const Maps = ({ directions, showStartRoute = false }: MapsProps) => {
   handleLoadindDirections();
 
   const handleStartRoute = async () => {
-    const response = await fetch(
-      `http://localhost:4000/routes/route/${routeId}`
-    );
+    const response = await fetch(`http://localhost:3000/api/routes/${routeId}`);
     const route = await response.json();
 
     maps?.removeAllRoutes();

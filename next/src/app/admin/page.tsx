@@ -14,7 +14,7 @@ const Admin = () => {
       console.log(data);
       if (!maps?.hasRoute(data.route_id)) {
         const response = await fetch(
-          `http://localhost:4000/routes/route/${data.route_id}`
+          `http://localhost:3000/api/routes/${data.route_id}`
         );
         const route = await response.json();
         maps?.removeRoute(data.route_id);
