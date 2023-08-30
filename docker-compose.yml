@@ -1,0 +1,41 @@
+version: "3"
+
+services:
+  nestjs:
+    build: ./nestjs
+    ports:
+      - "4000:4000"
+      - "5555:5555"
+    volumes:
+      - ./nestjs:/home/node/app
+
+  next:
+    build: ./next
+    ports:
+      - 3000:3000
+    container_name: next
+    volumes:
+      - ./next:/app
+    environment:
+      - WDS_SOCKET_HOST=127.0.0.1 
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+    
+
+  mongo:
+    # image: bitnami/mongodb:5.0.17
+    image: bitnami/mongodb:4.4.15-debian-10-r8
+    volumes:
+      - mongodb_data:/bitnami/mongodb
+    ports:
+      - '27017:27017'
+    environment:
+      - MONGODB_USERNAME=root
+      - MONGODB_ROOT_PASSWORD=root
+      - MONGODB_REPLICA_SET_MODE=primary
+      - MONGODB_REPLICA_SET_KEY=123456
+      - MONGODB_DATABASE=nest
+
+volumes:
+  mongodb_data:
+    driver: local

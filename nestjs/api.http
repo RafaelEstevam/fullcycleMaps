@@ -1,0 +1,34 @@
+GET http://localhost:4000
+
+###
+POST http://localhost:4000/routes
+Content-Type: application/json
+
+{
+    "name":"Rota 2",
+    "source_id":"ChIJfXd1JfpMzJQRSsUvU9LXWRU",
+    "destination_id":"ChIJOXCZOYZLzJQR8JN6qytwKZo"
+}
+
+###
+GET http://localhost:4000/routes/route/64e4ea50acb77947e5c93384
+
+###
+POST http://localhost:4000/routes/driver
+Content-Type: application/json
+
+{
+    "route_id":"64e4eecb91f0e28d7396d9a8",
+    "lat":1,
+    "lng":1
+}
+
+###
+GET  http://localhost:4000/places?text=av tancredo neves, sao jose dos campos, sp
+#ChIJfXd1JfpMzJQRSsUvU9LXWRU
+###
+GET  http://localhost:4000/places?text=rua uberlandia, jardin Ismenia, sao jose dos campos, sp
+#ChIJOXCZOYZLzJQR8JN6qytwKZo
+
+### Get directions
+GET http://localhost:4000/directions?originId=ChIJfXd1JfpMzJQRSsUvU9LXWRU&destinationId=ChIJOXCZOYZLzJQR8JN6qytwKZo
