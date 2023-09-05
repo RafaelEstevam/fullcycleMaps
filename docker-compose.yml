@@ -8,6 +8,8 @@ services:
       - "5555:5555"
     volumes:
       - ./nestjs:/home/node/app
+    # networks:
+    #   - my-network
 
   next:
     build: ./next
@@ -22,6 +24,8 @@ services:
       - WATCHPACK_POLLING=true
     links:
       - nestjs
+    # networks:
+    #   - my-network
     
 
   mongo:
@@ -37,11 +41,19 @@ services:
       - MONGODB_REPLICA_SET_MODE=primary
       - MONGODB_REPLICA_SET_KEY=123456
       - MONGODB_DATABASE=nest
+    # networks:
+    #   - my-network
 
   redis:
     image: redis:6.2.13-alpine
     # image: redis:7.0.8-alpine
+    # networks:
+    #   - my-network
 
 volumes:
   mongodb_data:
     driver: local
+
+# networks:
+#   my-network:
+#     external: true

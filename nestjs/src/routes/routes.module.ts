@@ -6,9 +6,21 @@ import { RoutesDriverService } from './routes-driver/routes-driver.service';
 import { RoutesGateway } from './routes/routes.gateway';
 import { BullModule } from '@nestjs/bull';
 import { NewPointsConsumer } from './new-routes.comsumer';
+import { ClientsModule, Transport } from '@nestjs/microservices';
 
 @Module({
-  imports: [MapsModule, BullModule.registerQueue({ name: 'new-points' })],
+  imports: [MapsModule, BullModule.registerQueue({ name: 'new-points' }), ClientsModule.register([
+    {
+      name: 'KAFKA_SERVICE',
+      transport: Transport.KAFKA,
+      options: {
+        client: {
+          clientId: 'nest',
+          brokers: ['kafka:9092']
+        },
+      }
+    }
+  ])],
   controllers: [RoutesController],
   providers: [
     RoutesService,
